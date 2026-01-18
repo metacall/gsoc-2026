@@ -37,7 +37,94 @@ We **highly recommend you to ask for a review** anytime to the community or ment
 
 You can also propose your own.
 
-### Implement Core CI Support for C & Distributables
+### Implement Multi-Language Parser
+
+**Skills**: C/C++, Programming Language Parsers
+
+**Expected size of the project**: TODO
+
+**Difficulty rating**: Hard
+
+**Description**:
+
+MetaCall Core right now implements support for multiple languages and it provides runtime instrospection by multiple methodologies. This allows to have information for executing the calls in a type safe manner when possible, or list the functions, classes or objects that are loaded into it. This minimal information is only usable for the runtime normally. There is cases like Intellisense or Function Mesh projects, we need to provide a standard tool for generating ASTs from multi-language projects. In this project we will be using a tool like [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) for generating an AST with all the dependency tree between multiple languages. This will be crucial for representing mixed programming language projects in an unified way, so this can be later on consumed by our Visual Studio Code plugin for having Intellisense or by the Function Mesh for breaking down a project in other subparts and distributing the workload.
+
+**Expected outcomes**: Cross-platform tool and library written in C/C++ that can be used as a CLI or from a simple C API that can be embeeded into other projects for parsing programming languages supported by MetaCall Core.
+
+**Possible mentors**: TODO
+
+### Function Mesh Implementation
+
+**Skills**: C/C++, Distributed Systems, Networking, Compiler Design
+
+**Expected size of the project**: Large (350 hours)
+
+**Difficulty rating**: High
+
+**Description**:
+
+This project focuses on converting monolithic applications into scalable microservices by making each function or module a separate service. By utilizing a Remote Procedure Call (RPC) loader, the goal is to enable functions to communicate across multiple servers, yet appear as local calls to developers. Inspired by Erlang’s distributed computing model, the system would create a seamless environment where developers can build applications that scale effortlessly, without worrying about the complexities of distributed systems. The core challenge is to develop a compiler or runtime system capable of identifying and switching between servers dynamically based on function calls, ensuring minimal overhead for the developer while maximizing system performance and scalability.
+
+**Expected outcomes**:
+ - A functional distributed mesh system that abstracts communication complexities for developers.
+ - A compiler or runtime capable of identifying function placement on servers dynamically.
+ - A scalable system that can be easily integrated into existing monolithic codebases.
+ - Comprehensive documentation and a guide for integrating existing applications into the mesh architecture.
+
+**Possible mentors**: TODO
+
+**Resources**:
+ - MetaCall Express FaaS RPC Example: https://github.com/metacall/express-faas-rpc-example
+
+### Rust Loader Update
+
+**Skills**: Rust
+
+**Expected size of the project**: Medium (175 hours)
+
+**Difficulty rating**: Hard
+
+**Description**:
+
+Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-2022?tab=readme-ov-file#rust-loader-support) but the code has became outdated due to nature of Rust Compiler unstable API / ABI. This year the code was cleaned, all dependencies were deleted and it was able to compile and run again inside the CI but the version of the compiler supported is still very old (nightly-2021-12-04). The idea of this project is to update to the latest version and add more tests and examples with tutorials. It will be also interesting to find a portable version, or at least to prevent depending on unstable Rust Compiler API (although I am not sure this is possible). Showing examples of mixing Rust and C++ would or script languages using Rust directly without need of using macros in the original Rust code would be also interesting, also [updating existing examples](https://github.com/metacall/python-rust-melody-example). Adding support for more types will be also interesting.
+
+**Expected outcomes**: Implement a fully functional version of the Rust Loader with the latest compiler API. Extend the functionalities that are not implemented and provide more tests and examples with some tutorials about how to use it. Update existing tutorials using Rust Loader.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge
+
+**Resources**:
+ - MetaCall Rust Loader Code: https://github.com/metacall/core/tree/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/loaders/rs_loader
+ - Previous Work: https://github.com/metacall/core/issues/443
+
+### Code Coverage and Memory Tracking Improvements
+
+**Skills**: C/C++, Debugging, Tooling, CI/CD, Low-level Instrumentation
+
+**Expected size of the project**: TODO
+
+**Difficulty rating**: High
+
+**Description**:
+
+This project aims to significantly improve code coverage reporting and memory tracking reliability across platforms. The current memory tracking mechanism is very basic and cannot detect leaks in detail, making debugging difficult and reducing developer productivity. Additionally, several tests fail on specific architectures such as ARM64 and PPC64, often without meaningful error messages, and these failures are hard to reproduce locally since they only appear in CI virtualized environments.
+
+The project will explore extending support of existing tools such as Valgrind and AddressSanitizer (ASan) to improve memory leak detection, diagnostics, and reporting. In parallel, it will investigate and implement a custom lightweight instrumentation layer tailored to the project’s runtime, allowing fine-grained tracking of allocations, deallocations, and execution paths without destabilizing the application. A strong focus will be placed on observability, improving logs, traces, and error reporting in CI environments to make elusive bugs easier to detect and reproduce.
+
+**Expected outcomes**:
+ - Improved memory tracking system that reports leaks without crashing the application.
+ - Better integration and evaluation of Valgrind and ASan for automated testing and diagnostics.
+ - A custom code instrumentation mechanism for memory usage and code coverage tracking.
+ - Enhanced observability in CI pipelines, especially for ARM64 and PPC64 architectures.
+ - Clear, actionable error messages and documentation for debugging hard-to-reproduce issues.
+
+**Possible mentors**: TODO
+
+**Resources**:
+ - Sanitizer Setup: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/cmake/CompileOptions.cmake#L112
+ - Valgrind Setup: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/tests/CMakeLists.txt#L55
+ - Memory Tracker: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/reflect/include/reflect/reflect_memory_tracker.h
+
+### Implement Core C Support for CI & Distributables
 
 **Skills**: GitHub Actions, C/C++, CMake Build System, Homebrew, Guix, Windows Package Managers
 
