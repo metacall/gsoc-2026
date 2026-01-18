@@ -37,6 +37,8 @@ We **highly recommend you to ask for a review** anytime to the community or ment
 
 You can also propose your own.
 
+---
+
 ### Implement Multi-Language Parser
 
 **Skills**: C/C++, Programming Language Parsers
@@ -52,6 +54,8 @@ MetaCall Core right now implements support for multiple languages and it provide
 **Expected outcomes**: Cross-platform tool and library written in C/C++ that can be used as a CLI or from a simple C API that can be embeeded into other projects for parsing programming languages supported by MetaCall Core.
 
 **Possible mentors**: TODO
+
+---
 
 ### Function Mesh Implementation
 
@@ -76,6 +80,8 @@ This project focuses on converting monolithic applications into scalable microse
 **Resources**:
  - MetaCall Express FaaS RPC Example: https://github.com/metacall/express-faas-rpc-example
 
+---
+
 ### Rust Loader Update
 
 **Skills**: Rust
@@ -95,6 +101,8 @@ Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-202
 **Resources**:
  - MetaCall Rust Loader Code: https://github.com/metacall/core/tree/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/loaders/rs_loader
  - Previous Work: https://github.com/metacall/core/issues/443
+
+---
 
 ### Code Coverage and Memory Tracking Improvements
 
@@ -123,6 +131,8 @@ The project will explore extending support of existing tools such as Valgrind an
  - Sanitizer Setup: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/cmake/CompileOptions.cmake#L112
  - Valgrind Setup: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/tests/CMakeLists.txt#L55
  - Memory Tracker: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/reflect/include/reflect/reflect_memory_tracker.h
+
+---
 
 ### Implement Core C Support for CI & Distributables
 
