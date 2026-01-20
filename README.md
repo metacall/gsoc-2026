@@ -82,28 +82,6 @@ This project focuses on converting monolithic applications into scalable microse
 
 ---
 
-### Rust Loader Update
-
-**Skills**: Rust
-
-**Expected size of the project**: Medium (175 hours)
-
-**Difficulty rating**: Hard
-
-**Description**:
-
-Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-2022?tab=readme-ov-file#rust-loader-support) but the code has became outdated due to nature of Rust Compiler unstable API / ABI. This year the code was cleaned, all dependencies were deleted and it was able to compile and run again inside the CI but the version of the compiler supported is still very old (nightly-2021-12-04). The idea of this project is to update to the latest version and add more tests and examples with tutorials. It will be also interesting to find a portable version, or at least to prevent depending on unstable Rust Compiler API (although I am not sure this is possible). Showing examples of mixing Rust and C++ would or script languages using Rust directly without need of using macros in the original Rust code would be also interesting, also [updating existing examples](https://github.com/metacall/python-rust-melody-example). Adding support for more types will be also interesting.
-
-**Expected outcomes**: Implement a fully functional version of the Rust Loader with the latest compiler API. Extend the functionalities that are not implemented and provide more tests and examples with some tutorials about how to use it. Update existing tutorials using Rust Loader.
-
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge
-
-**Resources**:
- - MetaCall Rust Loader Code: https://github.com/metacall/core/tree/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/loaders/rs_loader
- - Previous Work: https://github.com/metacall/core/issues/443
-
----
-
 ### Code Coverage and Memory Tracking Improvements
 
 **Skills**: C/C++, Debugging, Tooling, CI/CD, Low-level Instrumentation
@@ -134,11 +112,100 @@ The project will explore extending support of existing tools such as Valgrind an
 
 ---
 
+### MetaCall Deploy and MetaCall FaaS Completion
+
+**Skills**: TypeScript, Testing, CI/CD
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+This project focuses on completing and stabilizing the existing MetaCall Deploy and MetaCall FaaS (Function as a Service) infrastructure. Unlike previous years where MetaCall FaaS required a full reimplementation, the core functionality is now largely in place, and the remaining work consists of resolving pending issues, completing unimplemented features, and finalizing the developer workflow.
+
+MetaCall FaaS enables developers to locally test cloud functions in an environment that closely mimics the production MetaCall FaaS platform. This is a critical component of the MetaCall ecosystem, as it allows developers to validate distributed polyglot applications before deployment. At the moment, the project has partial test coverage (9 tests passing, 6 pending), and several issues remain open that block a fully usable release.
+
+The project will involve fixing failing and pending tests, polishing the TypeScript implementation, and improving the integration between MetaCall Deploy, MetaCall FaaS, and the MetaCall CLI. While the project is closely related to DevOps, it also requires hands-on work in the TypeScript codebase and coordination with MetaCall Protocol to ensure code reuse and consistency.
+
+**Expected outcomes**:
+
+ - Completion of pending features in MetaCall Deploy and MetaCall FaaS.
+ - All tests passing, with improved test coverage and stability.
+ - A reliable local FaaS environment for testing MetaCall projects.
+ - Improved integration with MetaCall CLI for a smoother developer workflow.
+ - Updated documentation describing usage, limitations, and deployment flow.
+
+**Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez
+
+**Resources**:
+ - MetaCall FaaS (TypeScript): https://github.com/metacall/faas
+ - MetaCall Deploy: https://github.com/metacall/deploy
+ - MetaCall FaaS Dashboard: https://dashboard.metacall.io
+ - MetaCall Protocol: https://github.com/metacall/protocol
+ - Video - Deploying Functions into MetaCall FaaS: https://www.youtube.com/watch?v=2RAqTmQAWEc
+
+---
+
+### MetaCall SSR (Server-Side Rendering) Server
+
+**Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
+
+**Expected size of the project**: TODO
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+This project focuses on enhancing the MetaCall SSR (Server-Side Rendering) server, which allows high-performance React rendering on the backend across multiple programming languages. While the project has proven its potential in performance benchmarks, it currently faces a number of challenges, including failing tests and stability issues in development mode.
+
+The goal is to stabilize the existing implementation, resolve bugs, and improve the overall developer experience. Key objectives include fixing the failing tests, addressing issues specific to development mode (such as hot reloading, error handling, and debugging), and making MetaSSR fully functional for building and deploying websites in a production environment.
+
+The project will involve deep work in both Rust and TypeScript to ensure seamless integration between the languages. Additionally, it will improve the error reporting, enhance the testing framework, and streamline CI/CD workflows to ensure reliability and scalability for the MetaCall SSR server.
+
+**Expected outcomes**:
+
+ - A stable and fully functional MetaCall SSR server with a reliable development mode.
+ - Fixed failing tests and improved test coverage.
+ - Improved error handling and debugging experience.
+ - Seamless integration of React on the backend with minimal friction in deployment.
+ - Enhanced CI/CD pipelines for automated testing and deployment.
+
+**Possible mentors**: TODO
+
+**Resources**:
+ - MetaSSR Repository: https://github.com/metacall/metassr
+ - Previous work: https://github.com/metacall/gsoc-2023?tab=readme-ov-file#rust-actix--typescript-react-server-side-rendering-tsx-framework
+
+---
+
+### Rust Loader Update
+
+**Skills**: Rust
+
+**Expected size of the project**: Medium (175 hours)
+
+**Difficulty rating**: Hard
+
+**Description**:
+
+Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-2022?tab=readme-ov-file#rust-loader-support) but the code has became outdated due to nature of Rust Compiler unstable API / ABI. This year the code was cleaned, all dependencies were deleted and it was able to compile and run again inside the CI but the version of the compiler supported is still very old (nightly-2021-12-04). The idea of this project is to update to the latest version and add more tests and examples with tutorials. It will be also interesting to find a portable version, or at least to prevent depending on unstable Rust Compiler API (although I am not sure this is possible). Showing examples of mixing Rust and C++ would or script languages using Rust directly without need of using macros in the original Rust code would be also interesting, also [updating existing examples](https://github.com/metacall/python-rust-melody-example). Adding support for more types will be also interesting.
+
+**Expected outcomes**: Implement a fully functional version of the Rust Loader with the latest compiler API. Extend the functionalities that are not implemented and provide more tests and examples with some tutorials about how to use it. Update existing tutorials using Rust Loader.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge
+
+**Resources**:
+ - MetaCall Rust Loader Code: https://github.com/metacall/core/tree/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/loaders/rs_loader
+ - Previous Work: https://github.com/metacall/core/issues/443
+
+---
+
 ### Implement Core C Support for CI & Distributables
 
 **Skills**: GitHub Actions, C/C++, CMake Build System, Homebrew, Guix, Windows Package Managers
 
-**Expected size of the project**: Large (350 hours)
+**Expected size of the project**: Medium (175 hours)
 
 **Difficulty rating**: Hard
 
@@ -156,6 +223,44 @@ MetaCall Core has support for C by using `libffi`, `libclang` and `tcc`. This is
  - Guix `libclang`: https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/llvm.scm#n2160
  - Guix `tcc`: https://packages.guix.gnu.org/packages/tcc/
  - Guix `libffi`: https://packages.guix.gnu.org/packages/libffi
+
+---
+
+### Extended Platform and Architecture Support for MetaCall
+
+**Skills**: Cross-platform Development, C/C++, Build Systems, Shell Scripting (Bash), PowerShell, CI/CD, Toolchains
+
+**Expected size of the project**: TODO
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+This project aims to significantly expand MetaCall’s platform and architecture support beyond its current scope. At present, MetaCall supports Linux across multiple architectures (amd64 variants, 386, arm, arm64, riscv64), Windows using the MSVC toolchain, and macOS on both Intel and Apple Silicon. While this already covers many use cases, there is strong interest in supporting additional platforms and environments to improve adoption and portability.
+
+The main goal of this project is to add first-class support for new targets such as Windows via MinGW and Cygwin, as well as additional operating systems like Android and FreeBSD. This involves adapting the build and environment setup logic to correctly detect, configure, and compile MetaCall on these platforms.
+
+A key constraint of the project is that all platform logic must be implemented inside the portable environment setup scripts (./tools/metacall-environment.sh and ./tools/metacall-environment.ps1). This ensures that platform support is not tightly coupled to GitHub Actions or any specific CI provider, and that developers can reproduce builds locally with the same tooling used in CI.
+
+In parallel, the project will design and add CI pipelines to automatically build and test MetaCall on all supported platforms and architectures. This will help catch platform-specific regressions early and improve overall reliability.
+
+**Expected outcomes**:
+
+ - Support for additional Windows environments, including MinGW and Cygwin.
+ - Initial support for new platforms such as Android and FreeBSD.
+ - Refactored and extended metacall-environment scripts to handle platform detection and setup in a portable way.
+ - CI pipelines covering all supported platforms and architectures.
+ - Documentation describing platform requirements, limitations, and setup instructions.
+
+**Possible mentors**: TODO
+
+**Resources**:
+
+ - MetaCall Environment Scripts:
+   - https://github.com/metacall/core/blob/develop/tools/metacall-environment.sh
+   - https://github.com/metacall/core/blob/develop/tools/metacall-environment.ps1
+ - MetaCall Core Repository: https://github.com/metacall/core
+ - Cross-compilation and Toolchain Documentation (GCC, Clang, MinGW, Android NDK)
 
 ---
 
