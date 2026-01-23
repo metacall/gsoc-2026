@@ -31,7 +31,10 @@ We recommend you to follow [Google's guide to Writing a Proposal](https://google
 You can send the proposal link to any readable format you wish: Google Docs, plain text, in markdown... and preferably hosted online, accessible with a common browser without downloading anything.
 
 We **highly recommend you to ask for a review** anytime to the community or mentor candidates before the contributor application deadline. It's much easier if you get feedback early than to wait for the last moment.
-  
+
+## AI Policy
+
+# TODO
 
 ## Project Ideas
 
@@ -39,25 +42,33 @@ You can also propose your own.
 
 ---
 
-### Implement Multi-Language Parser
+### 1. Implement Multi-Language Parser
 
 **Skills**: C/C++, Programming Language Parsers
 
-**Expected size of the project**: TODO
+**Expected size of the project**: Medium (175 hours)
 
-**Difficulty rating**: Hard
+**Difficulty rating**: Medium
 
 **Description**:
 
 MetaCall Core right now implements support for multiple languages and it provides runtime instrospection by multiple methodologies. This allows to have information for executing the calls in a type safe manner when possible, or list the functions, classes or objects that are loaded into it. This minimal information is only usable for the runtime normally. There is cases like Intellisense or Function Mesh projects, we need to provide a standard tool for generating ASTs from multi-language projects. In this project we will be using a tool like [Tree Sitter](https://tree-sitter.github.io/tree-sitter/) for generating an AST with all the dependency tree between multiple languages. This will be crucial for representing mixed programming language projects in an unified way, so this can be later on consumed by our Visual Studio Code plugin for having Intellisense or by the Function Mesh for breaking down a project in other subparts and distributing the workload.
 
-**Expected outcomes**: Cross-platform tool and library written in C/C++ that can be used as a CLI or from a simple C API that can be embeeded into other projects for parsing programming languages supported by MetaCall Core.
+**Expected outcomes**:
+ - Cross-platform tool and library written in C/C++ that can be used as a CLI or from a simple C API that can be embeeded into other projects for parsing programming languages supported by MetaCall Core.
+ - It should be able to list all the functions and classes exported by any language.
+ - It should be able to create a dependency tree of a multi-language project.
 
 **Possible mentors**: TODO
 
+**Reference**:
+ - Tree Sitter Documentation: https://tree-sitter.github.io/tree-sitter/
+ - Tree Sitter C API: https://github.com/tree-sitter/tree-sitter/blob/master/lib/include/tree_sitter/api.h
+ - Tree Sitter Tutorial: https://dev.to/shrsv/making-sense-of-tree-sitters-c-api-2318
+
 ---
 
-### Function Mesh Implementation
+### 2. Function Mesh Implementation
 
 **Skills**: C/C++, Distributed Systems, Networking, Compiler Design
 
@@ -79,10 +90,12 @@ This project focuses on converting monolithic applications into scalable microse
 
 **Resources**:
  - MetaCall Express FaaS RPC Example: https://github.com/metacall/express-faas-rpc-example
+ - MetaCall Protocol: https://github.com/metacall/protocol
+ - MetaCall RPC Loader: https://github.com/metacall/core/tree/develop/source/loaders/rpc_loader
 
 ---
 
-### Code Coverage and Memory Tracking Improvements
+### 3. Code Coverage and Memory Tracking Improvements
 
 **Skills**: C/C++, Debugging, Tooling, CI/CD, Low-level Instrumentation
 
@@ -112,7 +125,7 @@ The project will explore extending support of existing tools such as Valgrind an
 
 ---
 
-### MetaCall Deploy and MetaCall FaaS Completion
+### 4. MetaCall Deploy and MetaCall FaaS Completion
 
 **Skills**: TypeScript, Testing, CI/CD
 
@@ -147,7 +160,7 @@ The project will involve fixing failing and pending tests, polishing the TypeScr
 
 ---
 
-### MetaCall SSR (Server-Side Rendering) Server
+### 5. MetaCall SSR (Server-Side Rendering) Server
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
@@ -179,7 +192,7 @@ The project will involve deep work in both Rust and TypeScript to ensure seamles
 
 ---
 
-### Rust Loader Update
+### 6. Rust Loader Update
 
 **Skills**: Rust
 
@@ -201,13 +214,13 @@ Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-202
 
 ---
 
-### Implement Core C Support for CI & Distributables
+### 7. Implement Core C Support for CI & Distributables
 
 **Skills**: GitHub Actions, C/C++, CMake Build System, Homebrew, Guix, Windows Package Managers
 
 **Expected size of the project**: Medium (175 hours)
 
-**Difficulty rating**: Hard
+**Difficulty rating**: Medium
 
 **Description**:
 
@@ -226,7 +239,40 @@ MetaCall Core has support for C by using `libffi`, `libclang` and `tcc`. This is
 
 ---
 
-### Extended Platform and Architecture Support for MetaCall
+### 8. Implement Model Context Protocol (MCP) Support for MetaCall Deploy & FaaS
+
+**Skills**: Artificial Intelligence, Model Context Protocol, Serverless Architectures, API Design, JSON, Context Management, Cloud Platforms, Python or TypeScript
+
+**Expected size of the project**: TODO
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+This project aims to integrate the Model Context Protocol (MCP) into MetaCall’s Deploy and FaaS modules, enabling context-aware serverless function deployments. MCP facilitates sharing context between models, which is essential for AI/ML-driven workflows where models maintain or adapt their state across invocations. The integration will focus on storing and propagating context data across functions, allowing seamless state transfer in multi-runtime serverless environments.
+
+The outcome will include a fully functional API for managing and sharing model context, along with middleware to handle context serialization and propagation in cloud-native environments. This functionality will be published as a reusable component, enabling other MetaCall users to deploy context-aware functions.
+
+**Expected outcomes**:
+
+ - Implement a minimal project that can be used for Claude or similar LLMs from Visual Studio Code or Antigravity that allows to deploy functions, list the existing ones, or run them locally in multiple languages.
+ - Documentation and integration for the project in order to make it ready to use for other developers.
+ - Testing for verifying that the tooling works and it's future proof.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Param Siddharth
+
+**Resources**:
+
+ - Model Context Protocol Documentation: https://modelcontextprotocol.io/docs/getting-started/intro
+ - Model Context Protocol SDK: https://modelcontextprotocol.io/docs/sdk
+ - MetaCall Deploy: https://github.com/metacall/deploy
+ - MetaCall FaaS: https://github.com/metacall/faas
+ - MetaCall Dashboard: https://metacall.io/dashboard
+ - Video - Deploying Functions into MetaCall FaaS: https://www.youtube.com/watch?v=2RAqTmQAWEc
+
+---
+
+### 9. Extended Platform and Architecture Support for MetaCall
 
 **Skills**: Cross-platform Development, C/C++, Build Systems, Shell Scripting (Bash), PowerShell, CI/CD, Toolchains
 
@@ -264,11 +310,11 @@ In parallel, the project will design and add CI pipelines to automatically build
 
 ---
 
-### Zig Port Implementation
+### 10. Zig Port Implementation
 
 **Skills**: Zig, Systems Programming, C
 
-**Expected size of the project**: Medium (175 hours)
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: Medium
 
