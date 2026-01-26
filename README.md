@@ -59,9 +59,9 @@ MetaCall Core right now implements support for multiple languages and it provide
  - It should be able to list all the functions and classes exported by any language.
  - It should be able to create a dependency tree of a multi-language project.
 
-**Possible mentors**: TODO
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge.
 
-**Reference**:
+**Resources**:
  - Tree Sitter Documentation: https://tree-sitter.github.io/tree-sitter/
  - Tree Sitter C API: https://github.com/tree-sitter/tree-sitter/blob/master/lib/include/tree_sitter/api.h
  - Tree Sitter Tutorial: https://dev.to/shrsv/making-sense-of-tree-sitters-c-api-2318
@@ -86,7 +86,7 @@ This project focuses on converting monolithic applications into scalable microse
  - A scalable system that can be easily integrated into existing monolithic codebases.
  - Comprehensive documentation and a guide for integrating existing applications into the mesh architecture.
 
-**Possible mentors**: TODO
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Jose Antonio Dominguez.
 
 **Resources**:
  - MetaCall Express FaaS RPC Example: https://github.com/metacall/express-faas-rpc-example
@@ -99,7 +99,7 @@ This project focuses on converting monolithic applications into scalable microse
 
 **Skills**: C/C++, Debugging, Tooling, CI/CD, Low-level Instrumentation
 
-**Expected size of the project**: TODO
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: High
 
@@ -116,7 +116,7 @@ The project will explore extending support of existing tools such as Valgrind an
  - Enhanced observability in CI pipelines, especially for ARM64 and PPC64 architectures.
  - Clear, actionable error messages and documentation for debugging hard-to-reproduce issues.
 
-**Possible mentors**: TODO
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Mostafa Wael Kamal.
 
 **Resources**:
  - Sanitizer Setup: https://github.com/metacall/core/blob/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/cmake/CompileOptions.cmake#L112
@@ -149,7 +149,7 @@ The project will involve fixing failing and pending tests, polishing the TypeScr
  - Improved integration with MetaCall CLI for a smoother developer workflow.
  - Updated documentation describing usage, limitations, and deployment flow.
 
-**Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez
+**Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth.
 
 **Resources**:
  - MetaCall FaaS (TypeScript): https://github.com/metacall/faas
@@ -164,7 +164,7 @@ The project will involve fixing failing and pending tests, polishing the TypeScr
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
-**Expected size of the project**: TODO
+**Expected size of the project**: Large (350 hours)
 
 **Difficulty rating**: Medium
 
@@ -184,7 +184,7 @@ The project will involve deep work in both Rust and TypeScript to ensure seamles
  - Seamless integration of React on the backend with minimal friction in deployment.
  - Enhanced CI/CD pipelines for automated testing and deployment.
 
-**Possible mentors**: TODO
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Gil Arasa Verge, Mostafa Wael Kamal, Alexandre Gimenez Fernandez, Param Siddharth, Jose Antonio Dominguez.
 
 **Resources**:
  - MetaSSR Repository: https://github.com/metacall/metassr
@@ -206,7 +206,7 @@ Few years ago [Rust Loader was implemented](https://github.com/metacall/gsoc-202
 
 **Expected outcomes**: Implement a fully functional version of the Rust Loader with the latest compiler API. Extend the functionalities that are not implemented and provide more tests and examples with some tutorials about how to use it. Update existing tutorials using Rust Loader.
 
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Thomas Rory Gummerson.
 
 **Resources**:
  - MetaCall Rust Loader Code: https://github.com/metacall/core/tree/a370a7f0fb7b1d70dec04d48d3e713e8fc3f1058/source/loaders/rs_loader
@@ -228,7 +228,7 @@ MetaCall Core has support for C by using `libffi`, `libclang` and `tcc`. This is
 
 **Expected outcomes**: MacOs and Windows C Loader support in the Core and the distribution of the C Loader for Windows, MacOs and Linux. We should able to run things like: `metacall test.c`, once this is implemented.
 
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Param Siddharth
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Param Siddharth, Mostafa Wael Kamal.
 
 **Resources**:
  - Previous Work: https://github.com/metacall/core/pull/458 & https://github.com/metacall/core/pull/445
@@ -243,7 +243,7 @@ MetaCall Core has support for C by using `libffi`, `libclang` and `tcc`. This is
 
 **Skills**: Artificial Intelligence, Model Context Protocol, Serverless Architectures, API Design, JSON, Context Management, Cloud Platforms, Python or TypeScript
 
-**Expected size of the project**: TODO
+**Expected size of the project**: Medium (175 hours)
 
 **Difficulty rating**: Medium
 
@@ -259,7 +259,7 @@ The outcome will include a fully functional API for managing and sharing model c
  - Documentation and integration for the project in order to make it ready to use for other developers.
  - Testing for verifying that the tooling works and it's future proof.
 
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Param Siddharth
+**Possible mentors**: Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Mostafa Wael Kamal.
 
 **Resources**:
 
@@ -276,7 +276,7 @@ The outcome will include a fully functional API for managing and sharing model c
 
 **Skills**: Cross-platform Development, C/C++, Build Systems, Shell Scripting (Bash), PowerShell, CI/CD, Toolchains
 
-**Expected size of the project**: TODO
+**Expected size of the project**: Medium (175 hours)
 
 **Difficulty rating**: Medium
 
@@ -298,7 +298,7 @@ In parallel, the project will design and add CI pipelines to automatically build
  - CI pipelines covering all supported platforms and architectures.
  - Documentation describing platform requirements, limitations, and setup instructions.
 
-**Possible mentors**: TODO
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Thomas Rory Gummerson.
 
 **Resources**:
 
@@ -335,7 +335,7 @@ Additionally, the project should produce a basic tutorial or article showcasing 
  - Comprehensive documentation, tests, and usage examples.
  - A tutorial or article demonstrating how developers can use the Zig port to build polyglot applications.
 
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge.
 
 **Resources**:
  - Prior Work: https://github.com/metacall/core/tree/5b592ac0e9a8e498e3e706623d0a788276f566e0/source/ports/zig_port
