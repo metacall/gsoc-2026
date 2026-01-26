@@ -1,9 +1,13 @@
 # Google Summer of Code 2026
 List of project ideas for contributors applying to the Google Summer of Code program in 2026 (GSoC 2026).
 
+---
+
 ## Timeline/milestones
 
 Please always refer to the [official timeline](https://developers.google.com/open-source/gsoc/timeline).  
+
+---
   
 ## Application Process
 
@@ -32,9 +36,13 @@ You can send the proposal link to any readable format you wish: Google Docs, pla
 
 We **highly recommend you to ask for a review** anytime to the community or mentor candidates before the contributor application deadline. It's much easier if you get feedback early than to wait for the last moment.
 
-## AI Policy
+---
 
-# TODO
+## Artificial Intelligence Usage Policy
+
+In order to fit properly our organization standards of how to use AI, [you can check here our policy](./AI-USAGE-POLICY.md).
+
+---
 
 ## Project Ideas
 
