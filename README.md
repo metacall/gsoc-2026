@@ -294,7 +294,7 @@ This project aims to significantly expand MetaCall’s platform and architecture
 
 The main goal of this project is to add first-class support for new targets such as Windows via MinGW and Cygwin, as well as additional operating systems like Android and FreeBSD. This involves adapting the build and environment setup logic to correctly detect, configure, and compile MetaCall on these platforms.
 
-A key constraint of the project is that all platform logic must be implemented inside the portable environment setup scripts (./tools/metacall-environment.sh and ./tools/metacall-environment.ps1). This ensures that platform support is not tightly coupled to GitHub Actions or any specific CI provider, and that developers can reproduce builds locally with the same tooling used in CI.
+A key constraint of the project is that all platform logic must be implemented inside the portable environment setup scripts ([./tools/metacall-environment.sh](https://github.com/metacall/core/blob/565bcbfd785442c2155a89661de0b2b0d125fdf3/tools/metacall-environment.sh) and [./tools/metacall-environment.ps1](https://github.com/metacall/core/blob/565bcbfd785442c2155a89661de0b2b0d125fdf3/tools/metacall-environment.ps1). This ensures that platform support is not tightly coupled to GitHub Actions or any specific CI provider, and that developers can reproduce builds locally with the same tooling used in CI.
 
 In parallel, the project will design and add CI pipelines to automatically build and test MetaCall on all supported platforms and architectures. This will help catch platform-specific regressions early and improve overall reliability.
 
