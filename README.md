@@ -372,6 +372,10 @@ This project aims to drastically modernize the C# loader's architecture. The pri
 3. **Type Expansion:** Extend the interop layer to support a wider array of complex data types between C++ and C#.
 4. **Initialization Modernization (Stretch Goal):** Modernize the legacy CoreCLR initialization to use newer .NET Core hosting APIs (`hostfxr`) at the end of the project.
 
+**Use Case Example**:
+
+A developer wants to use a C# data processing library within a Python or Node.js backend. With proper class support, they can instantiate a C# `DataProcessor` object from Node.js, maintain its internal state (like loaded datasets) across multiple function calls, and utilize modern C# pure functions for high-performance calculations. Without this, the developer would be forced to use stateless static methods and pass the state manually every time.
+
 **Possible Mentors:** Vicente Eduardo Ferrer Garcia
 
 **Resources:**
