@@ -352,6 +352,41 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
+### 11. MetaSSR CI/CD, Docker & Docs Improvements
+
+**Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
+
+**Expected size of the project**: Medium (175 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaSSR is currently facing an issue with its CI pipeline. Specifically, the build step for package generation is failing, which prevents the integration tests from running successfully on macOS.
+
+To investigate this, I explored the backend components involved in the process, including the package manager and the core MetaCall repository responsible for installing packages from specified locations. I downloaded and analyzed several packages from the packages repository and identified that the root cause lies in the packaging process—symlinks are not being created correctly on macOS. This misconfiguration leads to failures during the subsequent build steps.
+
+To address this, I plan to fix the packaging process to ensure proper symlink creation on macOS. In addition, I will enhance the CI pipeline by introducing HTML validation checks both before and after hydration, ensuring that rendered HTML is properly tested.
+
+Furthermore, I will update and fix the Dockerfile and incorporate deployment steps to improve the overall robustness and reliability of the system.
+
+**Expected Outcomes**:
+ - The CI pipeline will successfully build packages on macOS without failures, ensuring that integration tests run reliably across all environments.
+ - The brew-pkg packaging process will correctly generate symlinks, eliminating build-time issues and improving compatibility with macOS systems.
+ - Integration of HTML testing (before and after hydration) using Chromium and Playwright will ensure that rendering behavior is validated, leading to higher confidence in SSR functionality.
+ - The updated CI workflow will include proper browser setup and multiple validation checks, reducing flaky tests and catching issues earlier in the development cycle.
+ - A refined Docker setup will make it easier for developers to run, test, and contribute to the project locally with minimal configuration.
+ - Improved Docker and deployment steps will ensure consistent and reliable builds across different environments.
+ - Clear and updated documentation will help contributors understand the setup, CI workflow, and development process, reducing onboarding time.
+
+**Possible Mentors**: Vicente Eduardo Ferrer Garcia
+
+**Resources**:
+ - MetaSSR Repository: https://github.com/metacall/metassr
+ - MacOS Distributable: https://github.com/metacall/distributable-macos/releases/tag/v0.1.5
+ - Core Repository: https://github.com/metacall/core
+ - Brew-pkg Repository: https://github.com/metacall/brew-pkg
+
 ## Find Us
 
 The three chats are bridged by Matrix (messages sent from one, on the main room/channel, can be seen from all).
