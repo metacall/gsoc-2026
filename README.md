@@ -356,7 +356,7 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
-**Expected size of the project**: Medium (175 hours)
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: Medium
 
@@ -368,16 +368,11 @@ To investigate this, I explored the backend components involved in the process, 
 
 To address this, I plan to fix the packaging process to ensure proper symlink creation on macOS. In addition, I will enhance the CI pipeline by introducing HTML validation checks both before and after hydration, ensuring that rendered HTML is properly tested.
 
-Furthermore, I will update and fix the Dockerfile and incorporate deployment steps to improve the overall robustness and reliability of the system.
-
 **Expected Outcomes**:
  - The CI pipeline will successfully build packages on macOS without failures, ensuring that integration tests run reliably across all environments.
  - The brew-pkg packaging process will correctly generate symlinks, eliminating build-time issues and improving compatibility with macOS systems.
  - Integration of HTML testing (before and after hydration) using Chromium and Playwright will ensure that rendering behavior is validated, leading to higher confidence in SSR functionality.
  - The updated CI workflow will include proper browser setup and multiple validation checks, reducing flaky tests and catching issues earlier in the development cycle.
- - A refined Docker setup will make it easier for developers to run, test, and contribute to the project locally with minimal configuration.
- - Improved Docker and deployment steps will ensure consistent and reliable builds across different environments.
- - Clear and updated documentation will help contributors understand the setup, CI workflow, and development process, reducing onboarding time.
 
 **Possible Mentors**: Vicente Eduardo Ferrer Garcia
 
