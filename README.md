@@ -352,7 +352,7 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
-### 11. MetaSSR CI/CD, Docker & Docs Improvements
+### 11. MetaSSR CI/CD & Docs Improvements
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
