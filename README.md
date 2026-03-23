@@ -339,6 +339,7 @@ The goal of this project is to create a new Port for MetaCall in Zig, allowing Z
 Additionally, the project should produce a basic tutorial or article showcasing the Zig port, providing examples of how it can be used to create polyglot applications.
 
 **Expected outcomes**: 
+
  - A fully functional Zig port for MetaCall that supports calling multiple languages.
  - Comprehensive documentation, tests, and usage examples.
  - A tutorial or article demonstrating how developers can use the Zig port to build polyglot applications.
@@ -349,6 +350,40 @@ Additionally, the project should produce a basic tutorial or article showcasing 
  - Prior Work: https://github.com/metacall/core/tree/5b592ac0e9a8e498e3e706623d0a788276f566e0/source/ports/zig_port
  - MetaCall Core: https://github.com/metacall/core
  - Zig Documentation: https://ziglang.org/documentation/master/
+
+---
+
+### 13. Fuzzing Engine for MetaCall Testing Center 
+
+**Skills**: Python, Testing, CI/CD, FaaS, REST APIs 
+
+**Expected size of the project**:  Medium (175 hours) 
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaCall currently has no automated way to stress test its polyglot runtime across languages. Bugs in cross-language type coercion are invisible until users hit them in production. The testing-center repository exists for running examples but lacks any fuzzing support, macOS coverage, or cross-language boundary testing. 
+
+This project builds a fuzzing engine integrated into testing-center that automatically generates thousands of type-aware test cases, tests cross-language function calls (Python → JS → Ruby), and detects crashes or unexpected behavior before they reach production. 
+
+Unlike simple random testing, the fuzzer will inspect deployed function signatures via /api/inspect and generate inputs based on the actual parameter types of each language — handling edge cases like None/null/NaN/Infinity across language boundaries. 
+
+**Expected outcomes**:
+
+- A Python-based fuzzing engine that auto-inspects deployed function signatures via /api/inspect and generates type-aware random inputs 
+- Cross-language fuzzing chains (Python → JS → Ruby → TypeScript) that stress test the polyglot runtime at language boundaries 
+- Automatic detection and reporting of exact inputs that cause crashes or unexpected behavior 
+- Extended platform coverage — macOS and Docker test environments 
+- CI pipeline integration into testing-center for automated runs on every MetaCall release 
+- Documentation for contributors to extend the fuzzer with new language types and test cases
+
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia ,Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaCall FaaS Repository: https://github.com/metacall/faas
+ - MetaCall Protocol Repository: https://github.com/metacall/protocol
+ - MetaCall Testing Center Repository: https://github.com/metacall/testing-center/
 
 ---
 
