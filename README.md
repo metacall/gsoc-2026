@@ -107,7 +107,7 @@ This project focuses on converting monolithic applications into scalable microse
 
 **Skills**: C/C++, Debugging, Tooling, CI/CD, Low-level Instrumentation
 
-**Expected size of the project**: Small (90 hours)
+**Expected size of the project**: Medium (175 hours)
 
 **Difficulty rating**: High
 
@@ -349,6 +349,39 @@ Additionally, the project should produce a basic tutorial or article showcasing 
  - Prior Work: https://github.com/metacall/core/tree/5b592ac0e9a8e498e3e706623d0a788276f566e0/source/ports/zig_port
  - MetaCall Core: https://github.com/metacall/core
  - Zig Documentation: https://ziglang.org/documentation/master/
+
+---
+
+### 11. Metacircular Self-Registration of MetaCall API
+
+**Skills**: C/C++, C Loader, Build Systems, API Design, Tooling
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Hard
+
+**Description**:
+
+MetaCall currently exposes its C API through `metacall.h`, but language ports still replicate wrapper logic in each target language. This project focuses on the metacircular path requested by maintainers: make MetaCall capable of registering/exposing its own API through the C loader pipeline, then validate it through tests and one language-port migration.
+
+The work is based on the `_ex` load API data propagation and then extends C loader support for extra options required to load MetaCall itself.
+
+This is important because current per-language wrappers duplicate equivalent glue code and are harder to keep aligned when core APIs evolve. A metacircular path reduces drift between ports and lowers the long-term maintenance cost of adding or updating language integrations.
+
+The scope is medium because it combines core loader API plumbing, C loader option handling, test enablement for metacall self-loading, startup strategy definition, and at least one real port migration path.
+
+**Expected outcomes**:
+ - Update the loader plugin API in order to pass data in the last parameter (based on `_ex` path work).
+ - Allow C loader to receive a map value and pass additional options (include/library search paths, compiler options).
+ - Implement `metacall_c_metacall_test` with the new API, passing to C loader the MetaCall folders.
+ - Define a standard startup strategy to read MetaCall type info at initialization (package C loader where available, or codegen stubs for self-registration, bindgen-like direction).
+ - Update NodeJS or Python port to the newer metacircular API.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Thomas Rory Gummerson.
+
+**Resources**:
+ - Tracker Issue: https://github.com/metacall/core/issues/715
+ - Target test path: https://github.com/metacall/core/blob/develop/source/tests/metacall_c_metacall_test/source/metacall_c_metacall_test.cpp
 
 ---
 
