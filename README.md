@@ -350,13 +350,145 @@ Additionally, the project should produce a basic tutorial or article showcasing 
  - MetaCall Core: https://github.com/metacall/core
  - Zig Documentation: https://ziglang.org/documentation/master/
 
+---
 
+## Community Ideas
 
-### 11. Direct metacall/core C API Model Context Protocol (MCP) Server
+Ideas proposed by the community.
+
+---
+
+### 11. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
+
+**Skills**: C#, .NET Core Internals, C++, CMake, FFI
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+The current MetaCall C# (.NET Core) loader effectively handles static methods by treating them as global functions, but it lacks full object-oriented capabilities. Right now, it treats class static methods as isolated functions without supporting proper class instantiation. Furthermore, modern C# features like top-level statements are not fully supported.
+
+This project aims to drastically modernize the C# loader's architecture. The primary objective is to implement proper support for C# classes (instantiation, instance methods, and state preservation) to bring it to feature parity with other MetaCall language loaders. Additionally, the project will update the loader to support pure functions (as seen in newer C# standards) and expand the list of supported interoperability types.
+
+**Expected Outcomes**:
+1. **Proper Class Support:** Refactor the loader to support full class instantiation and object state, rather than just treating class static methods as functions.
+2. **Modern C# Standards:** Add support for pure functions and top-level statements.
+3. **Type Expansion:** Extend the interop layer to support a wider array of complex data types between C++ and C#.
+4. **Initialization Modernization (Stretch Goal):** Modernize the legacy CoreCLR initialization to use newer .NET Core hosting APIs (`hostfxr`) at the end of the project.
+
+**Use Case Example**:
+
+A developer wants to use a C# data processing library within a Python or Node.js backend. With proper class support, they can instantiate a C# `DataProcessor` object from Node.js, maintain its internal state (like loaded datasets) across multiple function calls, and utilize modern C# pure functions for high-performance calculations. Without this, the developer would be forced to use stateless static methods and pass the state manually every time.
+
+**Possible Mentors:** Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge.
+
+**Resources:**
+* [MetaCall Core C# Loader Source](https://github.com/metacall/core/tree/master/source/loaders/cs_loader)
+* [Microsoft Docs: Write a custom .NET Core host (hostfxr)](https://learn.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting)
+* [Microsoft Docs: C# Top-level statements (Pure Functions)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
+* [Microsoft Docs: .NET Native interoperability (FFI)](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/)
+
+---
+
+### 12. Redesign MetaCall Dashboard for MetaCall FaaS
+
+**Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
+
+**Expected size of the project**: Medium (175 hours)
+
+This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to deploy functions, the local MetaCall FaaS server status, manage local deployments, test functions, and view logs effectively, improving the overall local developer experience.
+
+The project focuses on redesigning a local MetaCall dashboard from scratch using React, TypeScript, Vite, and Tailwind CSS. The dashboard will integrate seamlessly with the MetaCall Protocol to support core local workflows. It will provide developers with a centralized interface to view system health, manage deployments, test functions, and inspect logs, making local development with MetaCall more efficient and user-friendly.
+
+**Expected outcomes**:
+
+ - A fully functional, MetaCall dashboard built with React and TypeScript.
+ - Implementation of key views including deployment management, function testing, and logs viewer, settings, plan, login / signup.
+ - Seamless integration with the local MetaCall FaaS server and MetaCall Protocol.
+ - Clear documentation on how to set up and use the MetaCall dashboard.
+
+**Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaCall FaaS Repository: https://github.com/metacall/faas
+ - MetaCall Protocol Repository: https://github.com/metacall/protocol
+ - MetaCall FaaS Dashboard (Reference): https://dashboard.metacall.io
+
+---
+
+### 13. MetaSSR CI/CD & Docs Improvements
+
+**Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaSSR is currently facing an issue with its CI pipeline. Specifically, the build step for package generation is failing, which prevents the integration tests from running successfully on macOS.
+
+To investigate this, I explored the backend components involved in the process, including the package manager and the core MetaCall repository responsible for installing packages from specified locations. I downloaded and analyzed several packages from the packages repository and identified that the root cause lies in the packaging process—symlinks are not being created correctly on macOS. This misconfiguration leads to failures during the subsequent build steps.
+
+To address this, I plan to fix the packaging process to ensure proper symlink creation on macOS. In addition, I will enhance the CI pipeline by introducing HTML validation checks both before and after hydration, ensuring that rendered HTML is properly tested.
+
+**Expected Outcomes**:
+ - The CI pipeline will successfully build packages on macOS without failures, ensuring that integration tests run reliably across all environments.
+ - The brew-pkg packaging process will correctly generate symlinks, eliminating build-time issues and improving compatibility with macOS systems.
+ - Integration of HTML testing (before and after hydration) using Chromium and Playwright will ensure that rendering behavior is validated, leading to higher confidence in SSR functionality.
+ - The updated CI workflow will include proper browser setup and multiple validation checks, reducing flaky tests and catching issues earlier in the development cycle.
+
+**Possible Mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Gil Arasa Verge, Mostafa Wael Kamal, Alexandre Gimenez Fernandez, Param Siddharth, Jose Antonio Dominguez, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaSSR Repository: https://github.com/metacall/metassr
+ - MacOS Distributable: https://github.com/metacall/distributable-macos/releases/tag/v0.1.5
+ - Core Repository: https://github.com/metacall/core
+ - Brew-pkg Repository: https://github.com/metacall/brew-pkg
+
+---
+
+### 14. Fuzzing Engine for MetaCall Testing Center 
+
+**Skills**: Python, Testing, CI/CD, FaaS, REST APIs 
+
+**Expected size of the project**:  Small (90 hours) 
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaCall currently has no automated way to stress test its polyglot runtime across languages. Bugs in cross-language type coercion are invisible until users hit them in production. The testing-center repository exists for running examples but lacks any fuzzing support, macOS coverage, or cross-language boundary testing. 
+
+This project builds a fuzzing engine integrated into testing-center that automatically generates thousands of type-aware test cases, tests cross-language function calls (Python → JS → Ruby), and detects crashes or unexpected behavior before they reach production. 
+
+Unlike simple random testing, the fuzzer will inspect deployed function signatures via /api/inspect and generate inputs based on the actual parameter types of each language — handling edge cases like None/null/NaN/Infinity across language boundaries. 
+
+**Expected outcomes**:
+
+- A Python-based fuzzing engine that auto-inspects deployed function signatures via /api/inspect and generates type-aware random inputs.
+- Cross-language fuzzing chains (Python => JS => Ruby => TypeScript) that stress test the polyglot runtime at language boundaries.
+- Automatic detection and reporting of exact inputs that cause crashes or unexpected behavior.
+- Extended platform coverage, Windows, macOS and Docker test environments.
+- CI pipeline integration into testing-center for automated runs on every MetaCall release.
+- Documentation for contributors to extend the fuzzer with new language types and test cases.
+
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaCall FaaS Repository: https://github.com/metacall/faas
+ - MetaCall Protocol Repository: https://github.com/metacall/protocol
+ - MetaCall Testing Center Repository: https://github.com/metacall/testing-center/
+
+---
+
+### 15. Direct metacall/core C API Model Context Protocol (MCP) Server
 
 **Skills**:  Artificial Intelligence, Model Context Protocol, C, Systems Programming, IPC (stdio), JSON-RPC, CMake
 
-**Expected size of the project**: Medium (175 hours)
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: Medium
 
@@ -370,13 +502,13 @@ This project requires real systems programming. The server must parse JSON-RPC 2
 
 **Expected outcomes**:
  - A standalone C binary implementing the MCP protocol over stdio, directly linked against the MetaCall C API.
- - Core MCP tools implemented: `load_script`, `call_function`, `inspect_functions`, and inline code evaluation.
+ - Core MCP tools implemented: `load`, `call`, `inspect`, and `eval` (inline code evaluation).
  - A robust type-conversion layer bridging JSON and MetaCall's internal value system (handling primitives, arrays, maps, and error types).
  - A CMake build system that cleanly resolves standard library paths, supporting both native and Dockerized execution.
  - Unit and end-to-end tests verifying JSON-RPC parsing, memory safety, and multi-language execution.
  - Integration documentation and configuration examples for VS Code, Claude Desktop, Google Antigravity and Cursor.
 
-**Possible mentors**: [@viferga please assign].
+**Possible mentors**: Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Mostafa Wael Kamal, Raj Aryan, Praveen Kumar, Vicente Eduardo Ferrer Garcia.
 
 **Resources**:
  - MetaCall C API Documentation: https://github.com/metacall/core/blob/develop/source/metacall/include/metacall/metacall.h
