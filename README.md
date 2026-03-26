@@ -484,7 +484,7 @@ Unlike simple random testing, the fuzzer will inspect deployed function signatur
 
 ---
 
-### 15. Direct metacall/core C API Model Context Protocol (MCP) Server
+### 15. Direct `metacall/core` C API Model Context Protocol (MCP) Server
 
 **Skills**:  Artificial Intelligence, Model Context Protocol, C, Systems Programming, IPC (stdio), JSON-RPC, CMake
 
