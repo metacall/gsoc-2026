@@ -450,6 +450,40 @@ To address this, I plan to fix the packaging process to ensure proper symlink cr
 
 ---
 
+### 14. Fuzzing Engine for MetaCall Testing Center 
+
+**Skills**: Python, Testing, CI/CD, FaaS, REST APIs 
+
+**Expected size of the project**:  Small (90 hours) 
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaCall currently has no automated way to stress test its polyglot runtime across languages. Bugs in cross-language type coercion are invisible until users hit them in production. The testing-center repository exists for running examples but lacks any fuzzing support, macOS coverage, or cross-language boundary testing. 
+
+This project builds a fuzzing engine integrated into testing-center that automatically generates thousands of type-aware test cases, tests cross-language function calls (Python → JS → Ruby), and detects crashes or unexpected behavior before they reach production. 
+
+Unlike simple random testing, the fuzzer will inspect deployed function signatures via /api/inspect and generate inputs based on the actual parameter types of each language — handling edge cases like None/null/NaN/Infinity across language boundaries. 
+
+**Expected outcomes**:
+
+- A Python-based fuzzing engine that auto-inspects deployed function signatures via /api/inspect and generates type-aware random inputs.
+- Cross-language fuzzing chains (Python => JS => Ruby => TypeScript) that stress test the polyglot runtime at language boundaries.
+- Automatic detection and reporting of exact inputs that cause crashes or unexpected behavior.
+- Extended platform coverage, Windows, macOS and Docker test environments.
+- CI pipeline integration into testing-center for automated runs on every MetaCall release.
+- Documentation for contributors to extend the fuzzer with new language types and test cases.
+
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaCall FaaS Repository: https://github.com/metacall/faas
+ - MetaCall Protocol Repository: https://github.com/metacall/protocol
+ - MetaCall Testing Center Repository: https://github.com/metacall/testing-center/
+
+---
+
 ## Find Us
 
 The three chats are bridged by Matrix (messages sent from one, on the main room/channel, can be seen from all).
