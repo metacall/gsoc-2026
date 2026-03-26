@@ -390,6 +390,8 @@ A developer wants to use a C# data processing library within a Python or Node.js
 * [Microsoft Docs: C# Top-level statements (Pure Functions)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
 * [Microsoft Docs: .NET Native interoperability (FFI)](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/)
 
+---
+
 ### 12. Redesign MetaCall Dashboard for MetaCall FaaS
 
 **Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
@@ -413,6 +415,38 @@ The project focuses on redesigning a local MetaCall dashboard from scratch using
  - MetaCall FaaS Repository: https://github.com/metacall/faas
  - MetaCall Protocol Repository: https://github.com/metacall/protocol
  - MetaCall FaaS Dashboard (Reference): https://dashboard.metacall.io
+
+---
+
+### 13. MetaSSR CI/CD & Docs Improvements
+
+**Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaSSR is currently facing an issue with its CI pipeline. Specifically, the build step for package generation is failing, which prevents the integration tests from running successfully on macOS.
+
+To investigate this, I explored the backend components involved in the process, including the package manager and the core MetaCall repository responsible for installing packages from specified locations. I downloaded and analyzed several packages from the packages repository and identified that the root cause lies in the packaging process—symlinks are not being created correctly on macOS. This misconfiguration leads to failures during the subsequent build steps.
+
+To address this, I plan to fix the packaging process to ensure proper symlink creation on macOS. In addition, I will enhance the CI pipeline by introducing HTML validation checks both before and after hydration, ensuring that rendered HTML is properly tested.
+
+**Expected Outcomes**:
+ - The CI pipeline will successfully build packages on macOS without failures, ensuring that integration tests run reliably across all environments.
+ - The brew-pkg packaging process will correctly generate symlinks, eliminating build-time issues and improving compatibility with macOS systems.
+ - Integration of HTML testing (before and after hydration) using Chromium and Playwright will ensure that rendering behavior is validated, leading to higher confidence in SSR functionality.
+ - The updated CI workflow will include proper browser setup and multiple validation checks, reducing flaky tests and catching issues earlier in the development cycle.
+
+**Possible Mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Gil Arasa Verge, Mostafa Wael Kamal, Alexandre Gimenez Fernandez, Param Siddharth, Jose Antonio Dominguez, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaSSR Repository: https://github.com/metacall/metassr
+ - MacOS Distributable: https://github.com/metacall/distributable-macos/releases/tag/v0.1.5
+ - Core Repository: https://github.com/metacall/core
+ - Brew-pkg Repository: https://github.com/metacall/brew-pkg
 
 ---
 
