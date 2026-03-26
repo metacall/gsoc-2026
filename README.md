@@ -382,13 +382,39 @@ This project aims to drastically modernize the C# loader's architecture. The pri
 
 A developer wants to use a C# data processing library within a Python or Node.js backend. With proper class support, they can instantiate a C# `DataProcessor` object from Node.js, maintain its internal state (like loaded datasets) across multiple function calls, and utilize modern C# pure functions for high-performance calculations. Without this, the developer would be forced to use stateless static methods and pass the state manually every time.
 
-**Possible Mentors:** Vicente Eduardo Ferrer Garcia
+**Possible Mentors:** Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge.
 
 **Resources:**
 * [MetaCall Core C# Loader Source](https://github.com/metacall/core/tree/master/source/loaders/cs_loader)
 * [Microsoft Docs: Write a custom .NET Core host (hostfxr)](https://learn.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting)
 * [Microsoft Docs: C# Top-level statements (Pure Functions)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
 * [Microsoft Docs: .NET Native interoperability (FFI)](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/)
+
+### 12. Redesign MetaCall Dashboard for MetaCall FaaS
+
+**Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
+
+**Expected size of the project**: Medium (175 hours)
+
+This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to deploy functions, the local MetaCall FaaS server status, manage local deployments, test functions, and view logs effectively, improving the overall local developer experience.
+
+The project focuses on redesigning a local MetaCall dashboard from scratch using React, TypeScript, Vite, and Tailwind CSS. The dashboard will integrate seamlessly with the MetaCall Protocol to support core local workflows. It will provide developers with a centralized interface to view system health, manage deployments, test functions, and inspect logs, making local development with MetaCall more efficient and user-friendly.
+
+**Expected outcomes**:
+
+ - A fully functional, MetaCall dashboard built with React and TypeScript.
+ - Implementation of key views including deployment management, function testing, and logs viewer, settings, plan, login / signup.
+ - Seamless integration with the local MetaCall FaaS server and MetaCall Protocol.
+ - Clear documentation on how to set up and use the MetaCall dashboard.
+
+**Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaCall FaaS Repository: https://github.com/metacall/faas
+ - MetaCall Protocol Repository: https://github.com/metacall/protocol
+ - MetaCall FaaS Dashboard (Reference): https://dashboard.metacall.io
+
+---
 
 ## Find Us
 
