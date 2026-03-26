@@ -352,13 +352,19 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
+## Community Ideas
+
+Ideas proposed by the community.
+
+---
+
 ### 11. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
 
 **Skills**: C#, .NET Core Internals, C++, CMake, FFI
 
-**Expected size of the project**: Large (350 hours)
+**Expected size of the project**: Small (90 hours)
 
-**Difficulty rating**: Medium / Hard
+**Difficulty rating**: Medium
 
 **Description**:
 
