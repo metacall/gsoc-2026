@@ -484,6 +484,41 @@ Unlike simple random testing, the fuzzer will inspect deployed function signatur
 
 ---
 
+### 15. Direct metacall/core C API Model Context Protocol (MCP) Server
+
+**Skills**:  Artificial Intelligence, Model Context Protocol, C, Systems Programming, IPC (stdio), JSON-RPC, CMake
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+This project aims to integrate the Model Context Protocol (MCP) into MetaCall’s core module's C API. The other MCP in project 8 is meant for faas and deploy modules; while excellent for cloud deployments, that requires a running server, introduces network latency, and is heavy for local AI-assisted coding. This project builds a lightweight, native MCP server written entirely in C that links directly against `libmetacall.so` and communicates over standard input/output (stdio).
+
+By exposing MetaCall's core runtime directly to AI agents (like GitHub Copilot or Claude Desktop), developers can allow LLMs to load scripts, execute functions, and inspect code across multiple languages (Python, Node.js, Ruby, etc.) entirely locally and in-process. 
+
+This project requires real systems programming. The server must parse JSON-RPC 2.0 messages from stdin, dispatch them to tool handlers, perform complex bidirectional type conversions between JSON and the `metacall_value` type system, and carefully manage memory allocations to prevent leaks during continuous agent sessions.
+
+**Expected outcomes**:
+ - A standalone C binary implementing the MCP protocol over stdio, directly linked against the MetaCall C API.
+ - Core MCP tools implemented: `load`, `call`, `inspect`, and `eval` (inline code evaluation).
+ - A robust type-conversion layer bridging JSON and MetaCall's internal value system (handling primitives, arrays, maps, and error types).
+ - A CMake build system that cleanly resolves standard library paths, supporting both native and Dockerized execution.
+ - Unit and end-to-end tests verifying JSON-RPC parsing, memory safety, and multi-language execution.
+ - Integration documentation and configuration examples for VS Code, Claude Desktop, Google Antigravity and Cursor.
+
+**Possible mentors**: Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Mostafa Wael Kamal, Raj Aryan, Praveen Kumar, Vicente Eduardo Ferrer Garcia.
+
+**Resources**:
+ - MetaCall C API Documentation: https://github.com/metacall/core/blob/develop/source/metacall/include/metacall/metacall.h
+ - MetaCall Value Types: https://github.com/metacall/core/blob/develop/source/metacall/include/metacall/metacall_value.h
+ - Model Context Protocol Specification: https://modelcontextprotocol.io/docs/concepts/architecture
+ - MCP Transports (stdio): https://modelcontextprotocol.io/docs/concepts/transports
+ - cJSON (Vendored JSON parser): https://github.com/DaveGamble/cJSON
+
+---
+
 ## Find Us
 
 The three chats are bridged by Matrix (messages sent from one, on the main room/channel, can be seen from all).
