@@ -356,7 +356,7 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 **Skills**: C/C++, C Loader, Build Systems, API Design, Tooling
 
-**Expected size of the project**: Medium (175 hours)
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: Hard
 
