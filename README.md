@@ -352,45 +352,13 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
-### 11. Metacircular Self-Registration of MetaCall API
-
-**Skills**: C/C++, C Loader, Build Systems, API Design, Tooling
-
-**Expected size of the project**: Small (90 hours)
-
-**Difficulty rating**: Hard
-
-**Description**:
-
-MetaCall currently exposes its C API through `metacall.h`, but language ports still replicate wrapper logic in each target language. This project focuses on the metacircular path told by sir Vicente: make MetaCall capable of registering/exposing its own API through the C loader pipeline, then validate it through tests and one language-port migration.
-
-The work is based on the `_ex` load API data propagation and then extends C loader support for extra options required to load MetaCall itself.
-
-This is important because current per-language wrappers duplicate equivalent glue code and are harder to keep aligned when core APIs evolve. A metacircular path reduces drift between ports and lowers the long-term maintenance cost of adding or updating language integrations.
-
-
-**Expected outcomes**:
- - Update the loader plugin API in order to pass data in the last parameter (based on `_ex` path work).
- - Allow C loader to receive a map value and pass additional options (include/library search paths, compiler options).
- - Implement `metacall_c_metacall_test` with the new API, passing to C loader the MetaCall folders.
- - Define a standard startup strategy to read MetaCall type info at initialization (package C loader where available, or codegen stubs for self-registration, bindgen-like direction).
- - Update NodeJS or Python port to the newer metacircular API.
-
-**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Thomas Rory Gummerson.
-
-**Resources**:
- - Tracker Issue: https://github.com/metacall/core/issues/715
- - Target test path: https://github.com/metacall/core/blob/develop/source/tests/metacall_c_metacall_test/source/metacall_c_metacall_test.cpp
-
----
-
 ## Community Ideas
 
 Ideas proposed by the community.
 
 ---
 
-### 12. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
+### 11. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
 
 **Skills**: C#, .NET Core Internals, C++, CMake, FFI
 
@@ -424,7 +392,7 @@ A developer wants to use a C# data processing library within a Python or Node.js
 
 ---
 
-### 13. Redesign MetaCall Dashboard for MetaCall FaaS
+### 12. Redesign MetaCall Dashboard for MetaCall FaaS
 
 **Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
 
@@ -450,7 +418,7 @@ The project focuses on redesigning a local MetaCall dashboard from scratch using
 
 ---
 
-### 14. MetaSSR CI/CD & Docs Improvements
+### 13. MetaSSR CI/CD & Docs Improvements
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
@@ -482,7 +450,7 @@ To address this, I plan to fix the packaging process to ensure proper symlink cr
 
 ---
 
-### 15. Fuzzing Engine for MetaCall Testing Center 
+### 14. Fuzzing Engine for MetaCall Testing Center 
 
 **Skills**: Python, Testing, CI/CD, FaaS, REST APIs 
 
@@ -516,7 +484,7 @@ Unlike simple random testing, the fuzzer will inspect deployed function signatur
 
 ---
 
-### 16. Direct `metacall/core` C API Model Context Protocol (MCP) Server
+### 15. Direct `metacall/core` C API Model Context Protocol (MCP) Server
 
 **Skills**:  Artificial Intelligence, Model Context Protocol, C, Systems Programming, IPC (stdio), JSON-RPC, CMake
 
@@ -548,6 +516,38 @@ This project requires real systems programming. The server must parse JSON-RPC 2
  - Model Context Protocol Specification: https://modelcontextprotocol.io/docs/concepts/architecture
  - MCP Transports (stdio): https://modelcontextprotocol.io/docs/concepts/transports
  - cJSON (Vendored JSON parser): https://github.com/DaveGamble/cJSON
+
+---
+
+### 16. Metacircular Self-Registration of MetaCall API
+
+**Skills**: C/C++, C Loader, Build Systems, API Design, Tooling
+
+**Expected size of the project**: Small (90 hours)
+
+**Difficulty rating**: Hard
+
+**Description**:
+
+MetaCall currently exposes its C API through `metacall.h`, but language ports still replicate wrapper logic in each target language. This project focuses on the metacircular path told by sir Vicente: make MetaCall capable of registering/exposing its own API through the C loader pipeline, then validate it through tests and one language-port migration.
+
+The work is based on the `_ex` load API data propagation and then extends C loader support for extra options required to load MetaCall itself.
+
+This is important because current per-language wrappers duplicate equivalent glue code and are harder to keep aligned when core APIs evolve. A metacircular path reduces drift between ports and lowers the long-term maintenance cost of adding or updating language integrations.
+
+
+**Expected outcomes**:
+ - Update the loader plugin API in order to pass data in the last parameter (based on `_ex` path work).
+ - Allow C loader to receive a map value and pass additional options (include/library search paths, compiler options).
+ - Implement `metacall_c_metacall_test` with the new API, passing to C loader the MetaCall folders.
+ - Define a standard startup strategy to read MetaCall type info at initialization (package C loader where available, or codegen stubs for self-registration, bindgen-like direction).
+ - Update NodeJS or Python port to the newer metacircular API.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge, Thomas Rory Gummerson.
+
+**Resources**:
+ - Tracker Issue: https://github.com/metacall/core/issues/715
+ - Target test path: https://github.com/metacall/core/blob/develop/source/tests/metacall_c_metacall_test/source/metacall_c_metacall_test.cpp
 
 ---
 
