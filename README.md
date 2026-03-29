@@ -550,6 +550,45 @@ This is important because current per-language wrappers duplicate equivalent glu
 
 ---
 
+Here's your proposal formatted to match the GSoC 2026 ideas list:
+
+---
+
+### 17. MetaSSR: Stabilization and FaaS Function Mesh Integration
+
+**Skills**: Rust, TypeScript, React, Server-Side Rendering, Distributed Systems, CI/CD
+
+**Expected size of the project**: Large (350 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+MetaSSR is a high-performance, Rust-based server-side rendering framework built on the MetaCall polyglot runtime. While it currently outperforms Node.js alternatives in raw benchmarks, it is blocked from production adoption by failing test suites, hot reload instability in development mode, and poor error propagation.
+
+This project has two phases. The first stabilizes the existing framework by resolving these blockers and establishing a reliable CI/CD baseline. The second transforms MetaSSR from a standard HTTP-based SSR server into a native worker node within the MetaCall function mesh by implementing a FaaS protocol adapter. The adapter wires `/inspect` and `/call` endpoints — already defined in the MetaCall rpc_loader and FaaS protocol — into MetaSSR's Axum server layer. Incoming FaaS payloads are handed off to the MetaCall C core for execution via the existing Rust port. Workers are scaled at the infrastructure level via Kubernetes pods, keeping MetaSSR's internal architecture unchanged. The commercial MetaCall FaaS achieves this with C++ nodes; this project delivers the open-source Rust equivalent.
+
+**Expected outcomes**:
+ - Fixed failing CI tests and a stable, well-documented baseline for MetaSSR.
+ - Resolved development mode issues including hot reload, error handling, and debugging.
+ - `/inspect` and `/call` endpoints implemented in MetaSSR's Axum server layer, conforming to the MetaCall FaaS protocol.
+ - FaaS payloads wired to the MetaCall C core for execution via the existing Rust port.
+ - Integration tests validating MetaSSR as a functional node in a multi-node function mesh setup.
+ - A benchmark comparing a single Node.js/Express monolith against a distributed tree of MetaSSR nodes communicating via rpc_loader, covering CPU-bound and I/O-bound scenarios.
+ - Documentation covering the adapter API, deployment model, and Kubernetes-based scaling.
+
+**Possible mentors**: Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Gil Arasa Verge, Mostafa Wael Kamal, Alexandre Gimenez Fernandez, Param Siddharth, Jose Antonio Dominguez, Raj Aryan, Praveen Kumar.
+
+**Resources**:
+ - MetaSSR Repository: https://github.com/metacall/metassr
+ - Function Mesh Architecture: https://medium.com/@metacall/function-mesh-architecture-c0304ba4bad0
+ - rpc_loader Implementation: https://github.com/metacall/core/blob/develop/source/loaders/rpc_loader
+ - MetaCall Protocol: https://github.com/metacall/protocol
+ - MetaCall FaaS (Node.js reference): https://github.com/metacall/faas
+ - Function Mesh Discussion (issue #114): https://github.com/metacall/metassr/issues/114
+
+ --- 
+
 ## Find Us
 
 The three chats are bridged by Matrix (messages sent from one, on the main room/channel, can be seen from all).
