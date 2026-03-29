@@ -535,7 +535,6 @@ The work is based on the `_ex` load API data propagation and then extends C load
 
 This is important because current per-language wrappers duplicate equivalent glue code and are harder to keep aligned when core APIs evolve. A metacircular path reduces drift between ports and lowers the long-term maintenance cost of adding or updating language integrations.
 
-
 **Expected outcomes**:
  - Update the loader plugin API in order to pass data in the last parameter (based on `_ex` path work).
  - Allow C loader to receive a map value and pass additional options (include/library search paths, compiler options).
