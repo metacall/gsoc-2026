@@ -352,13 +352,39 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
+### 11. Release Distributables from Core
+
+**Skills**: DevOps, GitHub Actions, C/C++, Build Systems, Bash, Batch
+
+**Expected size of the project**: Medium (175 hours)
+
+**Difficulty rating**: Medium
+
+**Description**:
+
+In 2024 we connected the Distributables with the Core but we plan to extend this further and allow to automatically test master and new versions for each platform. So every time we release a new version or we push to master, it gets tested in the latest version or in the tagged version, and it automatically generates a commit updating to the new version if everything worked. This will act as an extension to the previous project, providing the full automatic lifecycle of development and releases for all platforms. It is also expected to make it work with the install scripts CI, so we can test it from core to the install repository.
+
+**Expected outcomes**: Full lifecycle working and validated for MacOS, Windows, Linux. Tested for master and tagging versions and also including the install.
+
+**Possible mentors**: Vicente Eduardo Ferrer Garcia
+
+**Resources**:
+ - MetaCall Core Windows Dispatch: https://github.com/metacall/core/blob/5b592ac0e9a8e498e3e706623d0a788276f566e0/.github/workflows/windows-test.yml#L68
+ - MetaCall Core MacOS Dispatch: https://github.com/metacall/core/blob/5b592ac0e9a8e498e3e706623d0a788276f566e0/.github/workflows/macos-test.yml#L100
+ - MetaCall Core Linux Dispatch: https://github.com/metacall/core/blob/5b592ac0e9a8e498e3e706623d0a788276f566e0/.github/workflows/linux-test.yml#L70
+ - MetaCall Distributable Windows: https://github.com/metacall/distributable-windows
+ - MetaCall Distributable MacOS: https://github.com/metacall/distributable-macos
+ - MetaCall Distributable Linux: https://github.com/metacall/distributable-linux
+
+---
+
 ## Community Ideas
 
 Ideas proposed by the community.
 
 ---
 
-### 11. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
+### 12. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
 
 **Skills**: C#, .NET Core Internals, C++, CMake, FFI
 
@@ -392,7 +418,7 @@ A developer wants to use a C# data processing library within a Python or Node.js
 
 ---
 
-### 12. Redesign MetaCall Dashboard for MetaCall FaaS
+### 13. Redesign MetaCall Dashboard for MetaCall FaaS
 
 **Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
 
@@ -418,7 +444,7 @@ The project focuses on redesigning a local MetaCall dashboard from scratch using
 
 ---
 
-### 13. MetaSSR CI/CD & Docs Improvements
+### 14. MetaSSR CI/CD & Docs Improvements
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, CI/CD
 
@@ -450,7 +476,7 @@ To address this, I plan to fix the packaging process to ensure proper symlink cr
 
 ---
 
-### 14. Fuzzing Engine for MetaCall Testing Center 
+### 15. Fuzzing Engine for MetaCall Testing Center 
 
 **Skills**: Python, Testing, CI/CD, FaaS, REST APIs 
 
@@ -484,7 +510,7 @@ Unlike simple random testing, the fuzzer will inspect deployed function signatur
 
 ---
 
-### 15. Direct `metacall/core` C API Model Context Protocol (MCP) Server
+### 16. Direct `metacall/core` C API Model Context Protocol (MCP) Server
 
 **Skills**:  Artificial Intelligence, Model Context Protocol, C, Systems Programming, IPC (stdio), JSON-RPC, CMake
 
