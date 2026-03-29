@@ -550,10 +550,6 @@ This is important because current per-language wrappers duplicate equivalent glu
 
 ---
 
-Here's your proposal formatted to match the GSoC 2026 ideas list:
-
----
-
 ### 17. MetaSSR: Stabilization and FaaS Function Mesh Integration
 
 **Skills**: Rust, TypeScript, React, Server-Side Rendering, Distributed Systems, CI/CD
