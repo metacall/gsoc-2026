@@ -562,12 +562,12 @@ This is important because current per-language wrappers duplicate equivalent glu
 
 MetaSSR is a high-performance, Rust-based server-side rendering framework built on the MetaCall polyglot runtime. While it currently outperforms Node.js alternatives in raw benchmarks, it is blocked from production adoption by failing test suites, hot reload instability in development mode, and poor error propagation.
 
-This project has two phases. The first stabilizes the existing framework by resolving these blockers and establishing a reliable CI/CD baseline. The second transforms MetaSSR from a standard HTTP-based SSR server into a native worker node within the MetaCall function mesh by implementing a FaaS protocol adapter. The adapter wires `/inspect` and `/call` endpoints — already defined in the MetaCall rpc_loader and FaaS protocol — into MetaSSR's Axum server layer. Incoming FaaS payloads are handed off to the MetaCall C core for execution via the existing Rust port. Workers are scaled at the infrastructure level via Kubernetes pods, keeping MetaSSR's internal architecture unchanged. The commercial MetaCall FaaS achieves this with C++ nodes; this project delivers the open-source Rust equivalent.
+This project has two phases. The first stabilizes the existing framework by resolving these blockers and establishing a reliable CI/CD baseline. The second transforms MetaSSR from a standard HTTP-based SSR server into a native worker node within the MetaCall function mesh by implementing a FaaS protocol adapter. The adapter wires `/inspect`, `/call` and `/await` endpoints — already defined in the MetaCall rpc_loader and FaaS protocol — into MetaSSR's Axum server layer. Incoming FaaS payloads are handed off to the MetaCall C core for execution via the existing Rust port. Workers are scaled at the infrastructure level via Kubernetes pods, keeping MetaSSR's internal architecture unchanged. The commercial MetaCall FaaS achieves this with C++ nodes; this project delivers the open-source Rust equivalent.
 
 **Expected outcomes**:
  - Fixed failing CI tests and a stable, well-documented baseline for MetaSSR.
  - Resolved development mode issues including hot reload, error handling, and debugging.
- - `/inspect` and `/call` endpoints implemented in MetaSSR's Axum server layer, conforming to the MetaCall FaaS protocol.
+ - `/inspect`, `/call` and `/await` endpoints implemented in MetaSSR's Axum server layer, conforming to the MetaCall FaaS protocol.
  - FaaS payloads wired to the MetaCall C core for execution via the existing Rust port.
  - Integration tests validating MetaSSR as a functional node in a multi-node function mesh setup.
  - A benchmark comparing a single Node.js/Express monolith against a distributed tree of MetaSSR nodes communicating via rpc_loader, covering CPU-bound and I/O-bound scenarios.
