@@ -481,6 +481,8 @@ Unlike simple random testing, the fuzzer will inspect deployed function signatur
  - MetaCall FaaS Repository: https://github.com/metacall/faas
  - MetaCall Protocol Repository: https://github.com/metacall/protocol
  - MetaCall Testing Center Repository: https://github.com/metacall/testing-center/
+ - Property Based Testing Famework in Python: https://hypothesis.readthedocs.io/en/latest/tutorial/introduction.html
+ - Deriving Semantics-Aware Fuzzers from Web API Schema: https://arxiv.org/abs/2112.10328
 
 ---
 
